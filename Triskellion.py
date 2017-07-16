@@ -1,5 +1,3 @@
-# import life_happens
-
 class Witch:
     words = {
         1: {
@@ -115,18 +113,16 @@ def main():
 
     while witch.get_number_of_revived_words() < 7:
         while not witch.get_next_word():
-            # life_happens_the_next_word(witch)
-            next_word = input("Write the searched word: ")
+            next_word = input("Write one of the seven words of Arcturus: ")
             while witch.check_next_word_string(next_word) < 1 or witch.check_revived_words(next_word) < 1:
                 print("The word you wrote is duplicated or not one of the Seven Words of Arcturus!")
-                next_word = input("Once again, write the searched word: ")
+                next_word = input("Once again, write one of the seven words of Arcturus: ")
 
             witch.set_next_word_string(next_word)
             # change to True
             witch.switch_next_word()
 
         while not witch.get_know_the_meaning_of_the_next_word():
-            # life_happens_the_meaning_of_the_next_word(witch)
             # This is a simple program, so no fancy logic for guessing the right meaning of the word
             right_meaning = input("Does " + witch.get_witch_name() + " know the right meaning of the next word? [y/n]")
             while not((right_meaning.lower() != "y" and right_meaning.lower() == "n") or (right_meaning.lower() != "n" and right_meaning.lower() == "y")):
@@ -141,7 +137,6 @@ def main():
         # Now, witch has to put the acquired info to the proper action
         info_used_in_proper_action = False
         while not info_used_in_proper_action:
-            # life_happens_put_acquired_info_to_the_proper_action(witch)
             proper_action = input("Did " + witch.get_witch_name() + " use the acquired knowledge in real life situation? [y/n]")
             while not((proper_action.lower() != "y" and proper_action.lower() == "n") or (proper_action.lower() != "n" and proper_action.lower() == "y")):
                 print("ERROR! You have to write y or n! So, once again.")
@@ -158,7 +153,8 @@ def main():
                 print(str(witch))
 
     # All the words are revived and thus the seal of Grand Triskellion is broken and ancient magic is released
-    print("CONGRATULATIONS!\nYou have broken The Seal of Grand Triskellion and released the ancient magic :)")
+    print("CONGRATULATIONS!")
+    print("You have broken The Seal of Grand Triskellion and released the ancient magic :)")
 
 if __name__ == '__main__':
     main()
